@@ -1,7 +1,8 @@
 pipeline{
+    agent any
     stages{
         stage('test1')
-        step{
+        steps{
         sh '''
             #!/bin/bash
             pwd
