@@ -1,23 +1,24 @@
-pipleline {
+pipeline {
     agent any
-    stages{
-        stage('STAGE1')
-        steps{
-            echo "this is the stage1"
-            sh '''
-                 sleep 5
-                 echo "This is a linux command"
-                '''
 
+    stages {
+        stage('test1') {
+            steps {
+                sh '''
+                    #!/bin/bash
+                    pwd
+                    ls -lrt
+                    sleep 5
+                '''
+                echo "welcome to itdefined"
+            }
         }
-    }
-    stage('STAGE 2'){
-        steps{
-            echo "Building a java"
-            sh '''
-               #!/bin/bash
-               sleep 5
-               '''
-        }   }
+
+        stage('test2') {
+            steps {
+                sh 'sleep 10'
+                echo "welcome prarthana"
+            }
+        }
     }
 }
