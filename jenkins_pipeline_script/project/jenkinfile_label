@@ -1,0 +1,25 @@
+pipeline{
+    agent {label 'ubuntu'}
+    stages{
+        stage('STAGE1'){
+        steps{
+            echo "this is the stage1"
+            sh '''
+                sleep 5
+                echo "this is a linux command"
+
+            '''
+            stage('BUILD')
+                steps{
+                    echo "Building a java code"
+                    sh ''''
+                        sleep5
+        
+                }
+        }
+
+        }
+    }
+
+
+}
